@@ -1,0 +1,24 @@
+{
+    "name": "api/tennis-game",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Api\\": "api/",
+            "Router\\": "router/",
+            "Api\\V1\\Domain\\Game\\": "api/v1/domain/game/",
+            "Api\\V1\\Domain\\Game\\Interfaces\\": "api/v1/domain/game/interfaces/",
+            "Api\\V1\\Domain\\Models\\": "api/v1/domain/models/",
+            "Api\\V1\\Entities\\": "api/v1/entities/",
+            "Api\\V1\\Dao\\": "api/v1/dao/",
+            "Api\\V1\\Presentation\\Controllers\\": "api/v1/presentation/controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Oriana Morillo"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

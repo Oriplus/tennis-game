@@ -1,0 +1,5 @@
+/vendor
+.env
+/docker/logs
+/docker/mysql
+/.vscode
