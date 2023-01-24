@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Api\V1\Presentation\Controllers;
 
 use Api\V1\Domain\Models\Game;
-use Api\V1\Presentation\Response;
+use General\Response;
 
 class GameController
 {
