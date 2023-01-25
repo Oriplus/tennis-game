@@ -24,7 +24,7 @@ class MaleGame implements TennisGameInterface
       $round++;
     }
     return new HistoryDto(
-      $players[0]['name'],
+      htmlspecialchars(trim($players[0]['name'])),
       $totalRounds,
       (new \DateTime())->format('Y-m-d H:i:s'),
       1
