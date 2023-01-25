@@ -21,7 +21,7 @@ class HistoryController
         $toDate = $queryString['toDate'] ?? '';
       }
       $response = (new History)->getHistoryByType($tournamentId, $fromDate, $toDate);
-      Response::ApiResponse(200, 'History', json_encode($response));
+      Response::ApiResponse($response['code'], $response['msg'], $response['data']);
     } catch (\Throwable $th) {
       Response::ApiResponse(500, $th->getMessage());
     }
