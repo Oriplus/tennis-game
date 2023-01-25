@@ -41,6 +41,7 @@ class Router {
     $this->param = (int)$url[3] ?? null;
     $this->method = match ($_SERVER['REQUEST_METHOD']) {
       'POST' => 'create',
+      'GET' => ($this->param) ? 'show' : 'index',
       default => throw new Exception('Method does not exist.', 3101)
     };
     $this->getQueryString();
