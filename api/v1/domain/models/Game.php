@@ -8,15 +8,30 @@ use Api\V1\Domain\Game\TournamentValues;
 
 class Game
 {
-  public function play(int $tournamentId, array $players): string
+  public function play(int $tournamentId, array $players): array
   {
-    $tournamentId = filter_var($tournamentId, FILTER_VALIDATE_INT);
     if((count($players) % 2) != 0 || empty($players)){
-      throw new \Throwable("Players must be odd number", 1);
+      return  [
+        "code" => 422,
+        "data" => "",
+        "data" => "Error: Players must be odd number"
+      ];
     }
+    if(!isset(TournamentValues::TOURNAMENTS[$tournamentId])){
+      return  [
+        "code" => 404,
+        "data" => "",
+        "msg" => "Error: Tournament not found"
+      ];
+    }
+    $tournamentId = filter_var($tournamentId, FILTER_VALIDATE_INT);
     $tournament = TournamentValues::TOURNAMENTS[$tournamentId];
     $historyDto = (new $tournament)->playTournament($players);
     (new HistoryDao)->createHistory($historyDto);
-    return $historyDto->winner;
+    return  [
+      "code" => 200,
+      "data" => $historyDto->winner,
+      "msg" => "Tournament Finished"
+    ];
   }
 }
