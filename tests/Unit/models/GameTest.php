@@ -25,10 +25,14 @@ class GameTest extends TestCase
               'reaction' => 7
             ]
           ];
+          $response = [
+            "code" => 200,
+            "data" => 'Mary Thompson'
+          ];
         $mockGame = $this->createMock(Game::class);
         $mockGame->method('play')
-                    ->willReturn('Mary Thompson');
+                    ->willReturn($response);
         $result = $mockGame->play(1, $players);
-        $this->assertEquals('Mary Thompson', $result);
+        $this->assertEquals('Mary Thompson', $result['data']);
     }
 }
