@@ -9,6 +9,9 @@ class History
 {
   public function getHistoryByType(int $tournamentId, ?string $fromDate, ?string $toDate): array
   {
+    $tournamentId = filter_var($tournamentId, FILTER_VALIDATE_INT);
+    $fromDate = htmlspecialchars(trim($fromDate));
+    $fromDate = htmlspecialchars(trim($toDate));
     return (new HistoryDao)->getHistoryByType($tournamentId, $fromDate, $toDate);
   }
 }

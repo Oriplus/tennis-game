@@ -10,6 +10,7 @@ class Game
 {
   public function play(int $tournamentId, array $players): string
   {
+    $tournamentId = filter_var($tournamentId, FILTER_VALIDATE_INT);
     if((count($players) % 2) != 0 || empty($players)){
       throw new \Throwable("Players must be odd number", 1);
     }
