@@ -4,6 +4,7 @@
     "autoload": {
         "psr-4": {
             "Api\\": "api/",
+            "General\\":"general/",
             "Router\\": "router/",
             "Api\\V1\\Domain\\Game\\": "api/v1/domain/game/",
             "Api\\V1\\Domain\\Game\\Interfaces\\": "api/v1/domain/game/interfaces/",
@@ -20,5 +21,8 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5"
     }
 }
