@@ -3,19 +3,20 @@ declare(strict_types=1);
 
 namespace Api\V1\Entities;
 
-class HistoryDto {
+class HistoryDto implements \JsonSerializable
+{
 
   public function __construct(
     private string $winner,
     private int $roundQty,
     private string $date,
-    private int $tournamentType
+    private int $tournamentId
   )
   {
     $this->winner = $winner;
     $this->roundQty = $roundQty;
     $this->date = $date;
-    $this->tournamentType = $tournamentType;
+    $this->tournamentId = $tournamentId;
   }
 
   public function __get($name)
@@ -24,6 +25,15 @@ class HistoryDto {
           throw new \Exception("Property not found.");
       }
       return $this->$name;
+  }
+
+  public function jsonSerialize(): array
+  {
+    return [
+      'winner' => $this->winner,
+      'roundQty' => $this->roundQty,
+      'date' => $this->date
+    ];
   }
 }
 

@@ -12,7 +12,6 @@ class Database {
   private $password;
   private $dbName;
   protected $connection;
-  private $stmt;
 
   public function __construct()
   {
