@@ -17,8 +17,8 @@ class HistoryController
     try {
       if(!empty($queryString))
       {
-        $fromDate = $queryString['fromDate'] ?? null;
-        $toDate = $queryString['toDate'] ?? null;
+        $fromDate = $queryString['fromDate'] ?? '';
+        $toDate = $queryString['toDate'] ?? '';
       }
       $response = (new History)->getHistoryByType($tournamentId, $fromDate, $toDate);
       Response::ApiResponse(200, 'History', json_encode($response));

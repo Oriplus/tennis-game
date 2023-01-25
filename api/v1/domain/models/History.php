@@ -7,7 +7,7 @@ use Api\V1\Dao\HistoryDao;
 
 class History
 {
-  public function getHistoryByType(int $tournamentId, ?string $fromDate, ?string $toDate): array
+  public function getHistoryByType(int $tournamentId, string $fromDate, string $toDate): array
   {
     $tournamentId = filter_var($tournamentId, FILTER_VALIDATE_INT);
     $fromDate = htmlspecialchars(trim($fromDate));
