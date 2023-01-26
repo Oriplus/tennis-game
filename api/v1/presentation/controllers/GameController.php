@@ -17,7 +17,7 @@ class GameController
       $playersData = file_get_contents('php://input', true);
       $playersData = json_decode($playersData, true, 512, JSON_THROW_ON_ERROR);
       $response = (new Game)->play($tournamentId, $playersData);
-      Response::ApiResponse(200, 'Tournament finished', $response);
+      Response::ApiResponse($response['code'], $response['msg'], $response['data']);
     } catch (\Throwable $th) {
       Response::ApiResponse(500, $th->getMessage());
     }

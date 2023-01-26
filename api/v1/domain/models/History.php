@@ -12,6 +12,18 @@ class History
     $tournamentId = filter_var($tournamentId, FILTER_VALIDATE_INT);
     $fromDate = htmlspecialchars(trim($fromDate));
     $fromDate = htmlspecialchars(trim($toDate));
-    return (new HistoryDao)->getHistoryByType($tournamentId, $fromDate, $toDate);
+    $data = (new HistoryDao)->getHistoryByType($tournamentId, $fromDate, $toDate);
+    if(empty($data)){
+      return  [
+        "code" => 200,
+        "data" => "",
+        "msg" => "Empty Records"
+      ];
+    }
+    return  [
+      "code" => 200,
+      "data" => json_encode($data),
+      "msg" => "History"
+    ];
   }
 }

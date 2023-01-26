@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Mary Thompson",
+    "ability": 60,
+    "reaction": 4
+  },
+  {
+    "name": "Alicia Keys",
+    "ability": 73,
+    "reaction": 2
+  },
+  {
+    "name": "Laura King",
+    "ability": 10,
+    "reaction": 10
+  },
+  {
+    "name": "Kyle Jenner",
+    "ability": 47,
+    "reaction": 6
+  }
+]
