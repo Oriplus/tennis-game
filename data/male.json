@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Peter Jackson",
+    "ability": 60,
+    "strength": 7,
+    "velocity": 3
+  },
+  {
+    "name": "Ron Brown",
+    "ability": 73,
+    "strength": 8,
+    "velocity": 6
+  },
+  {
+    "name": "Martin K",
+    "ability": 10,
+    "strength": 1,
+    "velocity": 5
+  },
+  {
+    "name": "Justin Timberlake",
+    "ability": 47,
+    "strength": 6,
+    "velocity": 4
+  }
+]
