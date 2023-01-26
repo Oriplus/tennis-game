@@ -27,7 +27,7 @@ docker-compose exec php composer install
 ## Run Test
 
 ```
-docker-compose exec php php artisan test
+docker-compose exec php php ./vendor/bin/phpunit
 
 ```
 
