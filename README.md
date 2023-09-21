@@ -13,6 +13,7 @@ como parámetros adicionales al momento de calcular al ganador.
 En el torneo femenino, se considera el tiempo de reacción como un parámetro
 adicional al momento de calcular al ganador.
 
+Se aplica arquitectura por capas, patron de diseño strategy y factory
 
 ## Installation
 
